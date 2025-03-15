@@ -66,42 +66,57 @@
     }
 
     /* Hero Section Styling */
+    /* Hero Section */
     .hero {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+      /* Soft light gradient */
+      padding: 80px 20px;
       text-align: center;
-      height: 100vh;
-      color: #ffffff;
-      background: black;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      padding: 20px;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 2;
-      background: rgba(0, 0, 0, 0.6);
-      /* Adds a dark overlay behind text */
-      padding: 20px;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .hero .typed {
+    /* Container Styling */
+    #ContainerHero {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Name Styling */
+    .name {
+      color: #007bff;
+      /* Soft blue */
+      font-size: 36px;
       font-weight: bold;
-      color: #00bcd4;
     }
 
-    .hero .role,
-    .hero .experience {
-      font-size: 1.8rem;
-      margin-top: 15px;
-      font-weight: 600;
-      animation: fadeIn 1.5s ease-in-out;
+    /* Intro Styling */
+    .intro {
+      color: #495057;
+      /* Dark gray for contrast */
+      font-size: 20px;
+      font-weight: 500;
     }
+
+    /* Typed Effect */
+    .typed {
+      font-weight: bold;
+      color: #28a745;
+      /* Light green */
+      font-size: 22px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 10px;
+      }
+
+      .name {
+        font-size: 28px;
+      }
+    }
+
 
     .ftco-hireme {
       position: relative;
@@ -138,6 +153,34 @@
     /* Fix Text Visibility */
     .text-light {
       color: white !important;
+    }
+
+    #containerHero {
+      background: linear-gradient(to right, #f8f9fa, #e3f2fd);
+      /* Light gradient */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .name {
+      color: #007bff;
+      /* Soft blue */
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .intro {
+      color: #495057;
+      /* Dark gray for contrast */
+      font-size: 18px;
+    }
+
+    .typed {
+      font-weight: bold;
+      color: #28a745;
+      /*Light green for highlight */
     }
   </style>
 </head>
@@ -204,12 +247,12 @@
       <img src="assets/img/james-harrison-vpOeXr5wmR4-unsplash.jpg" alt="" data-aos="fade-in" class="">
 
 
-      <div class="container">
+      <div id="containerHero" class="container">
         <h2 class="name">Jaya Naga Prakash Thota</h2>
-        <p class="intro">I'm a <span class="typed" data-typed-items="Software Developer, Big Data Engineer">Data
+        <p class="intro">I'm a <span class="typed" data-typed-items="Software Developer, Data Engineer">Data
             Engineer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
 
-<!--         <h2 class="role">Full Stack Developerr</h2>
+        <!--         <h2 class="role">Full Stack Developerr</h2>
         <h2 class="experience">With 5 years of experience</h2> -->
     </section><!-- /Hero Section -->
 
@@ -297,16 +340,16 @@
               </div>
 
               <div class="progress">
-                <span class="skill"><span>scala</span> <i class="val">100%</i></span>
+                <span class="skill"><span>scala</span> <i class="val">80%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" style="width: 100%;"></div>
+                  <div class="progress-bar" style="width: 80%;"></div>
                 </div>
               </div>
 
               <div class="progress">
-                <span class="skill"><span>Spark</span> <i class="val">90%</i></span>
+                <span class="skill"><span>Spark</span> <i class="val">75%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar" style="width: 90%;"></div>
+                  <div class="progress-bar" style="width: 75%;"></div>
                 </div>
               </div>
 
@@ -428,7 +471,7 @@
               </p>
               <ul class="list-unstyled d-flex justify-content-center gap-4">
                 <li><strong>Location:</strong> Dallas, Texas, USA</li>
-                <li><strong>Phone:</strong> (682) 336-1127</li>
+                <li><strong>Phone:</strong>+1 (682) 336-1127</li>
                 <li><strong>Email:</strong> prakashthota0306@gmail.com</li>
               </ul>
             </div>
@@ -444,6 +487,72 @@
         <hr class="my-3 border-primary">
         <div class="row">
           <!-- Left Column -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="resume-item">
+              <h4>Full Stack Software Engineer Intern</h4>
+              <h5>08/2024 -- Present</h5>
+              <p><em>USAA, San Antonio, TX</em></p>
+              <ul>
+                <li>Developed and maintained full-stack web applications using Java, Spring Boot, Hibernate, and
+                  React.js, ensuring high performance, scalability, and security.</li>
+                <li>Participated in an Agile-Scrum environment, collaborating with cross-functional teams to deliver
+                  high-quality software in monthly iterations, conducting sprint planning, retrospectives, and daily
+                  stand-ups to track project progress.</li>
+                <li>Designed and implemented Service-Oriented Architecture (SOA) by developing SOAP-based and RESTful
+                  web services using Spring Boot, XML, and WSDL, enabling seamless communication between applications.
+                </li>
+                <li>Built responsive and dynamic user interfaces using React.js, Bootstrap, and Sass, ensuring a
+                  seamless user experience across various devices. Utilized Redux for state management and improved
+                  front-end performance through lazy loading and code splitting.</li>
+                <li>Followed Test-Driven Development (TDD) practices by implementing JUnit and Mockito test cases,
+                  improving code reliability and reducing bugs in production.</li>
+                <li>Implemented Spring ORM with Hibernate to handle database operations, creating entity domain objects,
+                  DAOs, and repositories to facilitate efficient data access and management.</li>
+                <li>Developed and deployed microservices to communicate using HTTP and REST protocols, implementing
+                  circuit breaker patterns using Resilience4j for fault tolerance.</li>
+                <li>Configured Continuous Integration/Continuous Deployment (CI/CD) pipelines using Jenkins, Git, and
+                  Docker, automating build and deployment processes for improved efficiency and reliability.</li>
+                <li>Established Secure Socket Shell (SSH) encryption using PuTTY to manage remote file access and secure
+                  connections in server environments.</li>
+                <li>Worked with MongoDB and Oracle, optimizing SQL queries, stored procedures, and indexing strategies
+                  to enhance database performance and scalability.Integrated Log4J for logging and monitoring
+                  application performance, enabling faster debugging and
+                  issue resolution.</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Software Developer</h4>
+              <h5>06/2019 -- 05/2021</h5>
+              <p><em>Infec Private Limited, India</em></p>
+              <ul>
+                <li>Designed & developed RESTful APIs using Java, Spring Boot, optimizing integration, performance,
+                  and
+                  SQL queries for efficient data retrieval.</li>
+                <li>Implemented robust POST APIs for UI-triggered changes, ensuring seamless data flow, efficient
+                  front-end integration validation, and enhanced system performance.</li>
+                <li>Developed and enhanced UI components using React, improving user experience and ensuring
+                  seamless
+                  integration with RESTful APIs for dynamic data rendering.</li>
+                <li>Experienced in unit testing with JUnit, maintaining code quality through refactoring and
+                  efficient
+                  Java codebase management, while using Kubernetes, Git, Jenkins, and Maven to streamline and
+                  automate
+                  software delivery.</li>
+                <li>Contributed to Agile/SCRUM, participating in standups, sprint planning, retrospectives, and
+                  quarterly planning for timely delivery and project alignment.</li>
+                <li>Collaborated with the manager, PO, and architect for new requirements and code reviews before
+                  moving
+                  to testing, ensuring that everything was functioning properly and developed for testing.</li>
+                <li>Created Splunk dashboards and set up alerts for all environments, from DIT to PROD, to monitor
+                  system performance and detect anomalies in real-time, ensuring proactive issue resolution and
+                  system
+                  reliability.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="resume-item">
               <h4>Member Technical</h4>
@@ -494,39 +603,6 @@
                   providing intuitive data visualization components for effective interpretation and strategic
                   insights.
                 </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Right Column -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="resume-item">
-              <h4>Software Developer</h4>
-              <h5>06/2019 -- 05/2021</h5>
-              <p><em>Infec Private Limited, India</em></p>
-              <ul>
-                <li>Designed & developed RESTful APIs using Java, Spring Boot, optimizing integration, performance,
-                  and
-                  SQL queries for efficient data retrieval.</li>
-                <li>Implemented robust POST APIs for UI-triggered changes, ensuring seamless data flow, efficient
-                  front-end integration validation, and enhanced system performance.</li>
-                <li>Developed and enhanced UI components using React, improving user experience and ensuring
-                  seamless
-                  integration with RESTful APIs for dynamic data rendering.</li>
-                <li>Experienced in unit testing with JUnit, maintaining code quality through refactoring and
-                  efficient
-                  Java codebase management, while using Kubernetes, Git, Jenkins, and Maven to streamline and
-                  automate
-                  software delivery.</li>
-                <li>Contributed to Agile/SCRUM, participating in standups, sprint planning, retrospectives, and
-                  quarterly planning for timely delivery and project alignment.</li>
-                <li>Collaborated with the manager, PO, and architect for new requirements and code reviews before
-                  moving
-                  to testing, ensuring that everything was functioning properly and developed for testing.</li>
-                <li>Created Splunk dashboards and set up alerts for all environments, from DIT to PROD, to monitor
-                  system performance and detect anomalies in real-time, ensuring proactive issue resolution and
-                  system
-                  reliability.</li>
               </ul>
             </div>
           </div>
