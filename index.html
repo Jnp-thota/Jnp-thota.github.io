@@ -182,7 +182,86 @@
       color: #28a745;
       /*Light green for highlight */
     }
+
+    /* Container styling */
+    .counter-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    /* Individual counter box */
+    .counter-box {
+      width: 1400px;
+      height: 100px;
+      background-color: #666c6c;
+      /* Light background */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    /* Number Styling */
+    .number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #007bff;
+      /* Primary blue color */
+    }
+
+    /* Text Styling */
+    .counter-text {
+      font-size: 16px;
+      color: #fefcfc;
+      margin-top: 5px;
+    }
   </style>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let counters = document.querySelectorAll(".number");
+
+      let options = {
+        threshold: 0.6, // Trigger when 60% of the element is in view
+      };
+
+      let observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let target = entry.target;
+            let countTo = parseInt(target.getAttribute("data-number"));
+            let count = 0;
+            let duration = 5000; // Slower animation (5 seconds)
+            let interval = Math.ceil(duration / countTo); // Time per increment
+
+            let updateCount = () => {
+              count++;
+              target.innerText = count;
+              if (count < countTo) {
+                setTimeout(updateCount, interval);
+              }
+            };
+
+            updateCount();
+            observer.unobserve(target); // Stop observing after animation
+          }
+        });
+      }, options);
+
+      counters.forEach(counter => {
+        observer.observe(counter);
+      });
+    });
+
+
+  </script>
 </head>
 
 <body class="index-page">
@@ -262,7 +341,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
-        <p>Full Stack Java Developer with 5 years of experience in building and optimizing high-performance, scalable
+        <p>Full Stack Java Developer with 5+ years of experience in building and optimizing high-performance, scalable
           web applications and microservices, leveraging technologies like Java, Spring Boot, React.js, Node.js, Kafka,
           Redis, Elasticsearch, and AWS to enhance system architecture, real-time data processing, and cloud deployment.
           Expertise in API development, database optimization, and fault-tolerant architectures, with a strong focus on
@@ -445,7 +524,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Resume</h2>
-        <p>Experienced Full Stack Java Developer with 5 years of building scalable applications and microservices using
+        <p>Experienced Full Stack Java Developer with 5+ years of building scalable applications and microservices using
           Java, Spring Boot, React.js, Node.js, and cloud technologies like AWS. Proficient in Big Data engineering with
           expertise in real-time data processing, Kafka, Elasticsearch, and integrating machine learning models to
           optimize business analytics and deployment in Agile environments.</p>
@@ -589,7 +668,7 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Software Developer</h4>
+              <h4>Software Developer Intern</h4>
               <h5>12/2018 -- 05/2019</h5>
               <p><em>AbhiBus Services India Private Limited, India</em></p>
               <ul>
@@ -738,34 +817,29 @@
     </section>
 
     <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-        <div class="row d-md-flex align-items-center text-center">
-          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow-lg p-4 rounded">
-              <div class="text">
-                <strong class="number display-4 text-primary" data-number="10">10</strong>
-                <span class="h5 text-dark">Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow-lg p-4 rounded">
-              <div class="text">
-                <strong class="number display-4 text-primary" data-number="7">7</strong>
-                <span class="h5 text-dark">Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 shadow-lg p-4 rounded">
-              <div class="text">
-                <strong class="number display-4 text-primary" data-number="30">30</strong>
-                <span class="h5 text-dark">Mentored Students</span>
-              </div>
-            </div>
-          </div>
+
+      <div class="counter-container">
+        <!-- Achievements -->
+        <div class="counter-box">
+          <strong class="number" data-number="10">0</strong>
+          <span class="counter-text">Achievements</span>
+        </div>
+
+        <!-- Projects -->
+        <div class="counter-box">
+          <strong class="number" data-number="7">0</strong>
+          <span class="counter-text">Projects</span>
+        </div>
+
+        <!-- Mentored Students -->
+        <div class="counter-box">
+          <strong class="number" data-number="20">0</strong>
+          <span class="counter-text">Mentored Students</span>
         </div>
       </div>
+
+
+
     </section>
 
     <!-- GitHub Section -->
@@ -778,8 +852,8 @@
                 class="text-warning">GitHub</span></h2>
             <div class="heading">
               <h4 class="mb-4 font-italic text-light">
-                Passionate about **scalable backend systems, API performance optimization, and data-driven solutions**
-                for business growth.
+                Passionate about <strong>scalable backend systems, API performance optimization, and data-driven
+                  solutions,</strong> for business growth.
               </h4>
               <p>
                 <a href="https://github.com/Jnp-thota"
@@ -922,6 +996,16 @@
                   <p>prakashthota0306@gmail.com</p>
                 </div>
               </div><!-- End Info Item -->
+
+              <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-circle"><i class="bi bi-file-earmark-arrow-down"></i></div>
+                <div>
+                  <h3>Download Resume</h3>
+                  <p><a href="assets/Jaya-Naga-Prakash-Thota6Yrs.pdf" download class="resume-link">Click here to
+                      download</a></p>
+                </div>
+              </div><!-- End Info Item -->
+
 
             </div>
           </div><!-- End Left Side -->
