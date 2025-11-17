@@ -221,6 +221,209 @@
       color: #fefcfc;
       margin-top: 5px;
     }
+
+    .usecase-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.usecase-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease-in-out;
+}
+
+.usecase-image:hover {
+  transform: scale(1.05);
+}
+
+/* === UI/UX Designer Sidebar Header === */
+
+/* HEADER LAYOUT + BACKGROUND IMAGE */
+#header {
+  width: 295px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #e5e7eb;
+  z-index: 9999;
+  border-right: 1px solid rgba(148, 163, 184, 0.25);
+
+  /* SIMPLE: solid fallback + background image */
+  background-color: #020617;
+  background-image: url("assets/img/d4c528fb-eb72-4f56-b6ee-1f60747a5213.jpg"); /* <-- change file name if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+#header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.18) 0, transparent 55%),
+              radial-gradient(circle at 90% 100%, rgba(94, 234, 212, 0.16) 0, transparent 55%);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Make inner content sit above the gradient overlay */
+#header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile image ring */
+#header .profile-img img {
+  width: 70%;
+  object-fit: cover;     /* critical - ensures proper crop */
+  object-position: center;
+  border-radius: 20%;
+  display: block;
+}
+
+/* Name + role */
+#header .logo .sitename {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+#header .logo .role-tag {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+  background: rgba(79, 70, 229, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* Social icons */
+#header .social-links a {
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.65);
+  color: #e5e7eb;
+  margin: 0 3px;
+  transition: all 0.25s ease;
+}
+
+#header .social-links a:hover {
+  background: linear-gradient(135deg, #38bdf8, #22c55e);
+  color: #0b1120;
+  transform: translateY(-1px) scale(1.03);
+}
+
+/* Nav menu */
+#header .navmenu {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#header .navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#header .navmenu li {
+  margin-bottom: 4px;
+}
+
+#header .navmenu a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #cbd5f5;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#header .navmenu a .navicon {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+#header .navmenu a:hover,
+#header .navmenu a.active {
+  background: rgba(15, 23, 42, 0.85);
+  color: #f9fafb;
+  box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.5);
+}
+
+/* Mobile toggle icon */
+.header-toggle {
+  position: absolute;
+  top: 16px;
+  right: -44px;
+  font-size: 24px;
+  color: #e5e7eb;
+}
+
+/* Adjust main content to not sit under sidebar (desktop) */
+@media (min-width: 992px) {
+  .main {
+    margin-left: 260px;
+  }
+}
+
+/* Mobile: header becomes top bar */
+@media (max-width: 991px) {
+  #header {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    position: fixed;
+  }
+
+  #header .profile-img {
+    display: none;
+  }
+
+  #header .logo .sitename {
+    font-size: 16px;
+  }
+
+  #header .logo .role-tag {
+    display: none;
+  }
+
+  #header .navmenu {
+    display: none; /* your existing JS can handle toggle if needed */
+  }
+}
+
+
+
+
+
   </style>
 
   <script>
@@ -266,64 +469,45 @@
 
 <body class="index-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+<header id="header" class="header d-flex flex-column">
+  <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img src="assets/img/prakash thota.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
+  <div class="profile-img">
+    <img src="assets/img/prakash thota.jpg" alt="" class="img-fluid rounded-circle">
+  </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename" style="font-size:18px;">Jaya Naga Prakash Thota</h1>
-    </a>
+  <a href="index.html" class="logo d-flex flex-column align-items-center justify-content-center text-center">
+    <h1 class="sitename">Jaya Naga Prakash Thota</h1>
+    <span class="role-tag">Senior UI/UX Designer</span>
+  </a>
 
-    <div class="social-links text-center">
-      <!-- <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a> -->
-      <a href="https://www.facebook.com/thota.jayanagaprakash1" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/jaya_naga_prakash1" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://discordapp.com/users/Jnprakashthota_560451" class="discord-icon"><i class="bi bi-discord"></i></a>
-      <a href="https://www.linkedin.com/in/jnprakashthota1" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/Jnp-thota" class="github-icon" target="_blank"> <i class="bi bi-github"></i></a>
-    </div>
+  <div class="social-links text-center">
+    <a href="https://www.facebook.com/thota.jayanagaprakash1" class="facebook"><i class="bi bi-facebook"></i></a>
+    <a href="https://www.instagram.com/jaya_naga_prakash1" class="instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://discordapp.com/users/Jnprakashthota_560451" class="discord-icon"><i class="bi bi-discord"></i></a>
+    <a href="https://www.linkedin.com/in/jnprakashthota1" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/Jnp-thota" class="github-icon" target="_blank"><i class="bi bi-github"></i></a>
+  </div>
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#project-section"><i class="bi bi-images navicon"></i> Projects</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <!-- <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li> -->
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+      <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+      <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+      <li><a href="#project-section"><i class="bi bi-images navicon"></i> Projects</a></li>
+      <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+      <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  </header>
 
   <main class="main">
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/james-harrison-vpOeXr5wmR4-unsplash.jpg" alt="" data-aos="fade-in" class="">
+      <img src="assets/img/pexels-tranmautritam-326502.jpg" alt="" data-aos="fade-in" class="">
 
 
       <div id="containerHero" class="container">
@@ -617,7 +801,7 @@
 
     </section><!-- /Resume Section -->
 
-    <section class="ftco-section" id="use-cases-section">
+<section class="ftco-section" id="use-cases-section">
   <div class="container">
     <div class="container section-title" data-aos="fade-up">
       <h2>UI/UX Use Cases</h2>
@@ -632,17 +816,16 @@
       <!-- Use Case 1 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
+          <div class="usecase-image-wrapper">
+            <img src="assets/img/dashboard-design.jpg" alt="Veterans Analytics Dashboard" class="img-fluid usecase-image">
+          </div>
           <div class="text mt-3">
             <h3 class="heading" style="font-size: 1.1rem;">Veterans Services Analytics Dashboard</h3>
             <p style="font-size: 0.9rem;">
-              Designed a Power BI and Tableau-based dashboard for a state veterans agency to visualize housing,
-              benefits usage, and service coverage across regions. Focused on clear visual hierarchy,
-              map-based insights, and filterable KPIs so program managers could quickly identify gaps in
-              support and make data-informed decisions.
+              Designed Power BI and Tableau dashboards to visualize benefits usage, housing, and service coverage. 
+              Improved decision-making through accessible, interactive, map-based analytics.
             </p>
-            <p style="font-size: 0.9rem;">
-              <strong>Key Focus:</strong> Data storytelling, accessibility (WCAG/508), decision support UI.
-            </p>
+            <p style="font-size: 0.9rem;"><strong>Key Focus:</strong> Data storytelling, WCAG/508 compliance, KPI clarity</p>
           </div>
         </div>
       </div>
@@ -650,16 +833,16 @@
       <!-- Use Case 2 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
+          <div class="usecase-image-wrapper">
+            <img src="assets/img/financial-trends.png" alt="Financial Trading UI" class="img-fluid usecase-image">
+          </div>
           <div class="text mt-3">
             <h3 class="heading" style="font-size: 1.1rem;">Financial Trading & Reporting Interfaces</h3>
             <p style="font-size: 0.9rem;">
-              Created UI flows and high-fidelity designs for financial trading and reporting tools, simplifying
-              complex data tables, filters, and multi-step workflows for traders and operations teams. Improved
-              clarity of positions, risk metrics, and alerts by refining layouts and interaction patterns.
+              Designed high-fidelity UI for traders, simplifying dense datasets and multi-step operations with 
+              refined layouts, filters, and interactive alerts.
             </p>
-            <p style="font-size: 0.9rem;">
-              <strong>Key Focus:</strong> Complex workflow simplification, dense data layout, error prevention.
-            </p>
+            <p style="font-size: 0.9rem;"><strong>Key Focus:</strong> Workflow simplification, precision UI, error prevention</p>
           </div>
         </div>
       </div>
@@ -667,16 +850,16 @@
       <!-- Use Case 3 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
+          <div class="usecase-image-wrapper">
+            <img src="assets/img/ADP-Payroll.png" alt="HR Portal UI" class="img-fluid usecase-image">
+          </div>
           <div class="text mt-3">
             <h3 class="heading" style="font-size: 1.1rem;">Employee Self-Service & HR Portals</h3>
             <p style="font-size: 0.9rem;">
-              Designed responsive self-service experiences for employees and HR teams, including profile management,
-              leave requests, payroll views, and document access. Reduced friction by organizing content into clear
-              sections, improving form UX, and providing inline guidance and status indicators.
+              Designed responsive HR workflows—profile management, leave requests, payroll views—supported with 
+              simplified content structures & inline guidance.
             </p>
-            <p style="font-size: 0.9rem;">
-              <strong>Key Focus:</strong> Form UX, responsive design, UX writing, user guidance.
-            </p>
+            <p style="font-size: 0.9rem;"><strong>Key Focus:</strong> Form UX, responsive design, UX writing</p>
           </div>
         </div>
       </div>
@@ -688,16 +871,16 @@
       <!-- Use Case 4 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
+          <div class="usecase-image-wrapper">
+            <img src="assets/img/figma-Component-Design.png" alt="Design System UI" class="img-fluid usecase-image">
+          </div>
           <div class="text mt-3">
             <h3 class="heading" style="font-size: 1.1rem;">Design System & Component Library</h3>
             <p style="font-size: 0.9rem;">
-              Built and maintained a Figma-based design system with reusable components, grids, color tokens,
-              and typography scales used across multiple internal applications. Partnered with frontend engineers
-              to align React/Material UI components with the system for consistent, scalable UI development.
+              Developed scalable Figma design system including tokens, grids, typography, and patterns aligned with 
+              React/Material UI for engineering reuse.
             </p>
-            <p style="font-size: 0.9rem;">
-              <strong>Key Focus:</strong> Design systems, component standardization, design–dev handoff.
-            </p>
+            <p style="font-size: 0.9rem;"><strong>Key Focus:</strong> Component standardization, dev handoff, system scalability</p>
           </div>
         </div>
       </div>
@@ -705,16 +888,16 @@
       <!-- Use Case 5 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
+          <div class="usecase-image-wrapper">
+            <img src="assets/img/Admin-Operations.png" alt="Admin Console UI" class="img-fluid usecase-image">
+          </div>
           <div class="text mt-3">
             <h3 class="heading" style="font-size: 1.1rem;">Operations Monitoring & Admin Consoles</h3>
             <p style="font-size: 0.9rem;">
-              Designed admin and monitoring UIs for microservice platforms, giving support teams visibility into
-              system health, API failures, and message processing. Translated technical metrics (logs, alerts,
-              queues) into meaningful dashboards with clear priorities and drill-down paths.
+              Designed intuitive monitoring dashboards for microservice health, log visibility, 
+              and incident prioritization using visual hierarchy & alert logic.
             </p>
-            <p style="font-size: 0.9rem;">
-              <strong>Key Focus:</strong> Information architecture, dashboard layout, alert prioritization.
-            </p>
+            <p style="font-size: 0.9rem;"><strong>Key Focus:</strong> IA, dashboard layout, alert logic</p>
           </div>
         </div>
       </div>
@@ -722,16 +905,15 @@
       <!-- Use Case 6 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
+          <div class="usecase-image-wrapper">
+            <img src="assets/img/mobile.webp" alt="Mobile UX UI" class="img-fluid usecase-image">
+          </div>
           <div class="text mt-3">
             <h3 class="heading" style="font-size: 1.1rem;">Mobile-First Customer Journeys</h3>
             <p style="font-size: 0.9rem;">
-              Worked on mobile-first flows for customers in delivery and service applications, improving onboarding,
-              search, checkout, and order tracking experiences. Used user flows, journey maps, and prototype testing 
-              to reduce friction and improve completion rates on mobile devices.
+              Improved onboarding, search, checkout, and proactive order tracking flows through user journey mapping, prototyping, and iteration cycles.
             </p>
-            <p style="font-size: 0.9rem;">
-              <strong>Key Focus:</strong> Mobile UX, journey mapping, prototype iteration.
-            </p>
+            <p style="font-size: 0.9rem;"><strong>Key Focus:</strong> Mobile-first UX, friction reduction, prototype testing</p>
           </div>
         </div>
       </div>
@@ -739,6 +921,7 @@
     </div>
   </div>
 </section>
+
 
 
 <section class="ftco-section" id="project-section">
@@ -757,8 +940,8 @@
       <!-- Project 1 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
-          <a class="block-20 zoom-effect d-block text-center">
-            <img src="assets/img/PredictCustomPurchase.jpg" alt="Predicting Customer Behavior" class="img-fluid">
+          <a class="block-20 zoom-effect d-block text-center usecase-image-wrapper">
+            <img src="assets/img/PredictCustomPurchase.jpg" alt="Predicting Customer Behavior" class="img-fluid usecase-image">
           </a>
           <div class="text mt-3">
             <h3 class="heading text-center" style="font-size: 1.2rem;">
@@ -781,8 +964,8 @@
       <!-- Project 2 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
-          <a class="block-20 zoom-effect d-block text-center">
-            <img src="assets/img/HyperInstantMart.jpg" alt="Hyperlocal Instant Delivery App" class="img-fluid">
+          <a class="block-20 zoom-effect d-block text-center usecase-image-wrapper">
+            <img src="assets/img/HyperInstantMart.jpg" alt="Hyperlocal Instant Delivery App" class="img-fluid usecase-image">
           </a>
           <div class="text mt-3">
             <h3 class="heading text-center" style="font-size: 1.2rem;">
@@ -805,8 +988,8 @@
       <!-- Project 3 -->
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry">
-          <a class="block-20 zoom-effect d-block text-center">
-            <img src="assets/img/microserviceArch.jpeg" alt="Unified Worker API" class="img-fluid">
+          <a class="block-20 zoom-effect d-block text-center usecase-image-wrapper">
+            <img src="assets/img/microserviceArch.jpeg" alt="Unified Worker API" class="img-fluid usecase-image">
           </a>
           <div class="text mt-3">
             <h3 class="heading text-center" style="font-size: 1.2rem;">
