@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Service Details - Jaya Naga Prakash Portfolio</title>
-  <meta content="Full Stack Development, Big Data, Cloud Solutions" name="description">
-  <meta content="Full Stack, Big Data, Java, Spring Boot, React, AWS, Kafka, Elasticsearch" name="keywords">
+  <title>Jaya Naga Prakash - UI/UX Services</title>
+  <meta content="Senior UI/UX Designer, Design Systems, Dashboards, Accessibility, Prototyping" name="description">
+  <meta content="UI UX, Figma, Adobe XD, Design Systems, Dashboards, Power BI, Tableau, Accessibility, WCAG" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -54,12 +54,12 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
 
@@ -84,36 +84,46 @@
     <section id="service-details" class="service-details section">
       <div class="container">
         <div class="row gy-4">
+
+          <!-- Left Sidebar -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="services-list">
-              <a href="#" class="active" onclick="showServiceDetails('fullstack')">Full Stack Development</a>
-              <a href="#" onclick="showServiceDetails('cloud')">Cloud Solutions</a>
-              <a href="#" onclick="showServiceDetails('ai')">AI and Machine Learning</a>
-              <a href="#" onclick="showServiceDetails('microservices')">Microservices Architecture</a>
+              <a href="#" class="active" data-service="uiux" onclick="showServiceDetails('uiux'); return false;">
+                UI/UX Design &amp; Prototyping
+              </a>
+              <a href="#" data-service="research" onclick="showServiceDetails('research'); return false;">
+                User Research &amp; Usability Testing
+              </a>
+              <a href="#" data-service="designsystem" onclick="showServiceDetails('designsystem'); return false;">
+                Design Systems &amp; UI Standards
+              </a>
+              <a href="#" data-service="dashboards" onclick="showServiceDetails('dashboards'); return false;">
+                Dashboard &amp; Data Visualization
+              </a>
             </div>
-            <h4>End-to-End Web Development</h4>
-            <p>Utilizing modern frameworks like React, Spring Boot, and Node.js, I offer full-stack development
-              services, creating responsive, user-friendly, and scalable applications.</p>
+            <h4>Human-Centered Digital Experiences</h4>
+            <p>
+              I help teams transform complex business and data requirements into intuitive, accessible, and visually
+              engaging interfaces that work across devices and align with user needs and organizational goals.
+            </p>
           </div>
 
+          <!-- Main Content -->
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img id="service-image" src="assets/img/FSD_Default.jpg" alt="Service Image" class="img-fluid services-img">
-            <h3 id="service-title">Building High-Performance and Scalable Web Applications</h3>
+            <img id="service-image" src="assets/img/uiux_default.jpg" alt="Service Image" class="img-fluid services-img">
+            <h3 id="service-title">UI/UX Design &amp; Prototyping</h3>
             <p id="service-description">
-              With a strong foundation in both front-end and back-end development, I specialize in delivering
-              high-performance, scalable web applications using Java, Spring Boot, React.js, and Node.js.
+              Designing end-to-end user experiences for web and data platforms using wireframes, interactive prototypes,
+              and high-fidelity mockups in Figma and Adobe XD, with a strong focus on clarity, usability, and business alignment.
             </p>
             <ul id="service-list">
-              <li><i class="bi bi-check-circle"></i> <span>Development of RESTful APIs and microservices with Spring
-                  Boot and Node.js.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Responsive front-end development with React.js and
-                  Angular.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Real-time data processing with Kafka and Redis.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Creation of user flows, wireframes, and interactive prototypes for complex workflows.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>High-fidelity UI designs for enterprise, government, and analytics applications.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Responsive layouts optimized for desktop, tablet, and mobile experiences.</span></li>
             </ul>
             <p id="service-extra">
-              I focus on building reliable and maintainable solutions that allow businesses to scale seamlessly while
-              ensuring smooth user experiences. From system design to deployment, my full-stack services include every
-              aspect of the development lifecycle.
+              I collaborate closely with stakeholders, product owners, and engineering teams to iterate quickly,
+              validate ideas early, and ensure that the final experience is both visually compelling and highly usable.
             </p>
           </div>
         </div>
@@ -123,19 +133,18 @@
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
-
     <div class="container">
-      <div class="copyright text-center ">
+      <div class="copyright text-center">
         <p>&#169 <span>Copyright</span> <strong class="px-1 sitename">Jaya Naga Prakash</strong> <span>All Rights
             Reserved</span></p>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -158,97 +167,60 @@
   <!-- Custom JS Code -->
   <script>
     function showServiceDetails(service) {
-      // Hide all service details
-      const allServices = document.querySelectorAll('.service-detail');
-      allServices.forEach(service => {
-        service.style.display = 'none';
-      });
-
-      // Hide all links and remove the 'active' class
+      // Toggle active state on sidebar links
       const allLinks = document.querySelectorAll('.services-list a');
       allLinks.forEach(link => {
-        link.classList.remove('active');
+        link.classList.toggle('active', link.dataset.service === service);
       });
 
-      // Show the clicked service's details
-      const serviceToShow = document.getElementById(service);
-      if (serviceToShow) {
-        serviceToShow.style.display = 'block';
-      }
-
-      // Update the content and image based on the clicked service
-      if (service === 'fullstack') {
-        document.getElementById('service-title').textContent = "End-to-End Web Development";
-        document.getElementById('service-description').textContent = "Utilizing modern frameworks like React, Spring Boot, and Node.js, I offer full-stack development services, creating responsive, user-friendly, and scalable applications.";
+      // Update main content based on selected service
+      if (service === 'uiux') {
+        document.getElementById('service-title').textContent = "UI/UX Design & Prototyping";
+        document.getElementById('service-description').textContent =
+          "Designing end-to-end user experiences for web and data platforms using wireframes, interactive prototypes, and high-fidelity mockups in Figma and Adobe XD.";
         document.getElementById('service-list').innerHTML = `
-          <li><i class="bi bi-check-circle"></i> <span>Development of RESTful APIs and microservices with Spring Boot and Node.js.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Responsive front-end development with React.js and Angular.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Real-time data processing with Kafka and Redis.</span></li>`;
-        document.getElementById('service-extra').textContent = "I focus on building reliable and maintainable solutions that allow businesses to scale seamlessly while ensuring smooth user experiences. From system design to deployment, my full-stack services include every aspect of the development lifecycle.";
-
-        // Change the image
-        document.getElementById('service-image').src = 'assets/img/fullStackImg.png'; // Replace with the path to the full-stack image
-      } else if (service === 'bigdata') {
-        // Customize for Big Data Engineering
-        document.getElementById('service-title').textContent = "Big Data Engineering";
-        document.getElementById('service-description').textContent = "Expertise in processing and analyzing large-scale data sets, utilizing tools such as Apache Hadoop, Spark, and AWS services.";
+          <li><i class="bi bi-check-circle"></i> <span>Creation of user flows, wireframes, and interactive prototypes for complex workflows.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>High-fidelity UI designs for enterprise, government, and analytics applications.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Responsive layouts optimized for desktop, tablet, and mobile devices.</span></li>`;
+        document.getElementById('service-extra').textContent =
+          "I translate business and user requirements into clean, modern interfaces, collaborating closely with cross-functional teams to ensure pixel-perfect implementation.";
+        document.getElementById('service-image').src = 'assets/img/uiux_default.jpg'; // Replace with your UI/UX image
+      } else if (service === 'research') {
+        document.getElementById('service-title').textContent = "User Research & Usability Testing";
+        document.getElementById('service-description').textContent =
+          "Planning and conducting user research, interviews, and usability tests to validate design decisions and uncover opportunities for improvement.";
         document.getElementById('service-list').innerHTML = `
-          <li><i class="bi bi-check-circle"></i> <span>Data processing with Apache Hadoop and Spark.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Real-time data streaming with Kafka and Kinesis.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Data storage and management with AWS S3, DynamoDB, and Elasticsearch.</span></li>`;
-        document.getElementById('service-extra').textContent = "I leverage big data technologies to help businesses process, analyze, and derive actionable insights from large and complex datasets.";
-
-        // Change the image
-        document.getElementById('service-image').src = 'assets/img/BigDataEnginner.png'; // Replace with the path to the big data image
-      } else if (service === 'cloud') {
-        // Customize for Cloud Solutions
-        document.getElementById('service-title').textContent = "Cloud Solutions";
-        document.getElementById('service-description').textContent = "Expert in designing and deploying cloud-native applications on AWS, Azure, and GCP, leveraging their managed services for scalability and performance.";
+          <li><i class="bi bi-check-circle"></i> <span>Persona development, journey mapping, and task analysis.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Usability test planning, facilitation, and findings synthesis.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Heuristic evaluations and actionable design recommendations.</span></li>`;
+        document.getElementById('service-extra').textContent =
+          "By grounding design in research and real user feedback, I help teams reduce risk, improve adoption, and deliver experiences that genuinely solve user problems.";
+        document.getElementById('service-image').src = 'assets/img/uiux_research.jpg'; // Replace with your research image
+      } else if (service === 'designsystem') {
+        document.getElementById('service-title').textContent = "Design Systems & UI Standards";
+        document.getElementById('service-description').textContent =
+          "Creating scalable design systems, component libraries, and visual standards that ensure consistency across applications and teams.";
         document.getElementById('service-list').innerHTML = `
-          <li><i class="bi bi-check-circle"></i> <span>Cloud architecture design for AWS, Azure, and GCP.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Containerization and orchestration with Docker and Kubernetes.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>CI/CD pipelines using AWS CodePipeline, GitLab, and Jenkins.</span></li>`;
-        document.getElementById('service-extra').textContent = "I help businesses migrate to the cloud, optimize their infrastructure, and leverage cloud-native technologies to build scalable, high-performance applications.";
-
-        // Change the image
-        document.getElementById('service-image').src = 'assets/img/CloudSolutions.webp'; // Replace with the path to the cloud image
-      } else if (service === 'ai') {
-        // Customize for AI and Machine Learning
-        document.getElementById('service-title').textContent = "AI and Machine Learning";
-        document.getElementById('service-description').textContent = "Specializing in AI-driven applications using machine learning algorithms, deep learning models, and natural language processing.";
+          <li><i class="bi bi-check-circle"></i> <span>Figma-based component libraries with states, variants, and tokens.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Collaboration with frontend teams using React/Material UI.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Documentation of usage guidelines, accessibility rules, and patterns.</span></li>`;
+        document.getElementById('service-extra').textContent =
+          "A strong design system accelerates delivery, reduces UI debt, and helps teams ship cohesive experiences while scaling products and features.";
+        document.getElementById('service-image').src = 'assets/img/uiux_designsystem.jpg'; // Replace with your design system image
+      } else if (service === 'dashboards') {
+        document.getElementById('service-title').textContent = "Dashboard & Data Visualization Design";
+        document.getElementById('service-description').textContent =
+          "Designing dashboards and data visualization experiences in tools like Power BI and Tableau that support fast, confident decision-making.";
         document.getElementById('service-list').innerHTML = `
-          <li><i class="bi bi-check-circle"></i> <span>Machine learning algorithms for predictive analytics.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Deep learning models using TensorFlow and PyTorch.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Natural language processing for chatbots and text analysis.</span></li>`;
-        document.getElementById('service-extra').textContent = "I design and deploy AI-driven solutions to help businesses automate tasks, gain insights, and improve customer experiences using machine learning and natural language processing techniques.";
-
-        // Change the image
-        document.getElementById('service-image').src = 'assets/img/AL&MLEngineer.png'; // Replace with the path to the AI image
-      } else if (service === 'microservices') {
-        // Customize for Microservices Architecture
-        document.getElementById('service-title').textContent = "Microservices Architecture";
-        document.getElementById('service-description').textContent = "Building robust, scalable microservices that can be independently deployed, monitored, and scaled using technologies like Spring Boot, Docker, and Kubernetes.";
-        document.getElementById('service-list').innerHTML = `
-          <li><i class="bi bi-check-circle"></i> <span>Designing and developing microservices with Spring Boot.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>Containerization using Docker and orchestration with Kubernetes.</span></li>
-          <li><i class="bi bi-check-circle"></i> <span>API Gateway integration for managing service communication.</span></li>`;
-        document.getElementById('service-extra').textContent = "I focus on building microservices that can scale with the business needs while ensuring they are loosely coupled, fault-tolerant, and easy to maintain.";
-
-        // Change the image
-        document.getElementById('service-image').src = 'assets/img/Microservice.webp'; // Replace with the path to the microservices image
-      }
-
-      // Add the 'active' class to the clicked link
-      const clickedLink = document.querySelector(`.services-list a[href='#${service}']`);
-      if (clickedLink) {
-        clickedLink.classList.add('active');
+          <li><i class="bi bi-check-circle"></i> <span>Information architecture and layout for complex data-heavy views.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Visual hierarchies, chart selection, and filter design.</span></li>
+          <li><i class="bi bi-check-circle"></i> <span>Accessible color palettes and typography for analytical interfaces.</span></li>`;
+        document.getElementById('service-extra').textContent =
+          "I work with BI and data teams to transform raw metrics into clear visual stories, helping non-technical stakeholders understand trends and take action.";
+        document.getElementById('service-image').src = 'assets/img/uiux_dashboards.jpg'; // Replace with your dashboard image
       }
     }
   </script>
 
-
-
-
 </body>
-
 </html>
