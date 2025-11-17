@@ -2,21 +2,34 @@
 <html lang="en">
 
 <head>
+<head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Jaya Naga Prakash Thota Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jaya Naga Prakash Thota | Senior UI/UX Designer Portfolio</title>
+
+  <!-- SEO Meta -->
+  <meta name="description"
+        content="Portfolio of Jaya Naga Prakash Thota, Senior UI/UX Designer specializing in design systems, dashboards, and data-driven product experiences.">
+  <meta name="keywords"
+        content="UI UX Designer, Senior UI UX, Product Designer, Design Systems, Dashboards, Data Visualization, Portfolio">
 
   <!-- Favicons -->
-  <link href="assets/img/android-chrome-192x192.png" rel="icon">
-  <!-- <link href="assets/img/Occupation-business-portfolio-icon-Graphics-35104847-1.jpg" rel="apple-touch-icon"> -->
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+  <!-- Android / high-res icon (optional but good) -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/portfolio_10001608.png">
+
+  <!-- Apple Touch Icon (for iOS home screen) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -29,13 +42,6 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 
   <style>
     /* Base container and row layout */
@@ -421,9 +427,33 @@
 }
 
 
+/* Background image for hero container */
+#containerHero {
+  background-image: url("assets/img/backgroungColor.jpeg"); /* <-- change file name */
+  background-size: cover;         /* ensures full image coverage */
+  background-position: center;    /* centers the focal area */
+  background-repeat: no-repeat;
+  
+  padding: 40px 30px;             /* spacing so text doesn’t touch edges */
+  border-radius: 12px;            /* optional smooth corners */
+  color: #ffffff;                 /* text readability */
 
+  position: relative;
+  isolation: isolate;             /* allows overlay to clip correctly */
+}
 
-
+/* Optional subtle dark overlay for better text contrast */
+#containerHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(85, 81, 183, 0.35); /* increase 0.1–0.6 to lighten */
+  border-radius: inherit;
+  z-index: -1;
+}
+#containerHero {
+  filter: brightness(0.9); /* try 1.1 → 1.6 */
+}
   </style>
 
   <script>
@@ -510,12 +540,13 @@
       <img src="assets/img/pexels-tranmautritam-326502.jpg" alt="" data-aos="fade-in" class="">
 
 
-      <div id="containerHero" class="container">
-        <h2 class="name">Jaya Naga Prakash Thota</h2>
-        <p class="intro">I'm a <span class="typed"
-            data-typed-items="UI/UX Designer, Senior UI/UX Designer">Senior UI/UX Designer
+<div id="containerHero" class="container">
+  <h2 class="name">Jaya Naga Prakash Thota</h2>
+  <p class="intro">I'm a <span class="typed"
+      data-typed-items=" Senior UI/UX Designer, Sr.UI/UX Designer">Senior UI/UX Designer
+    </span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+</div>
 
-          </span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
 
         <!--         <h2 class="role">Full Stack Developerr</h2>
         <h2 class="experience">With 5 years of experience</h2> -->
